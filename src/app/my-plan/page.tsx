@@ -1,6 +1,5 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePlan } from "@/context/PlanContext";
@@ -9,11 +8,6 @@ export default function MyPlan() {
     const { plan, saved, removeFromPlan, removeFromSaved, markAsDone } = usePlan();
     const [activeTab, setActiveTab] = useState("plan");
     const [sortBy, setSortBy] = useState("duration");
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setLoading(false);
-    }, []);
 
     const currentList = activeTab === "plan" ? plan : saved;
 
@@ -25,8 +19,6 @@ export default function MyPlan() {
 
     const minutes = plan.reduce((total, item) => total + item.duration, 0);
     const calories = plan.reduce((total, item) => total + item.caloriesBurned, 0);
-
-    if (loading) return <p className="py-10 text-center">Loading workouts...</p>;
 
     return (
         <section className="min-h-screen bg-black px-5 py-10 text-white">

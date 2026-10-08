@@ -13,3 +13,7 @@ export interface Workout {
   description: string;
   instructions: string[];
 }
+
+export interface PlanWorkout extends Workout {
+  isDone: boolean;
+}

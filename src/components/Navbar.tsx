@@ -1,27 +1,27 @@
+
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Dumbbell } from "lucide-react";
+import { usePlan } from "@/context/PlanContext";
 
 export default function Navbar() {
     const pathname = usePathname();
-
-    const planCount = 0;
-    const savedCount = 0;
+    const { plan, saved } = usePlan();
 
     return (
-        <nav className="bg-black border-b border-gray-800 px-5 py-4">
+        <nav className="border-b border-gray-800 bg-black px-5 py-4 text-white">
             <div className="container mx-auto flex flex-wrap items-center justify-between gap-4">
-
                 <Link href="/" className="flex items-center gap-2">
                     <Dumbbell size={24} className="text-lime-400" />
-                    <h1 className="text-xl font-bold text-white">FITLOG</h1>
+                    <h1 className="text-xl font-bold">FITLOG</h1>
                 </Link>
 
-                <div className="order-3 w-full sm:order-0 sm:w-auto flex justify-center gap-6">
+                <div className="order-3 flex w-full justify-center gap-6 sm:order-none sm:w-auto">
                     <Link
                         href="/"
-                        className={pathname === "/" ? "text-lime-400" : "text-gray-400"}
+                        className={pathname === "/" || pathname.startsWith("/workout/") ? "text-lime-400" : "text-gray-400"}
                     >
                         Workout
                     </Link>
@@ -35,21 +35,14 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex gap-3">
-                    <Link
-                        href="/my-plan"
-                        className="bg-lime-400 text-black px-3 py-1 rounded-full text-sm font-semibold"
-                    >
-                        Plan {planCount}
+                    <Link href="/my-plan" className="rounded-full bg-lime-400 px-3 py-1 text-sm font-semibold text-black">
+                        Plan {plan.length}
                     </Link>
 
-                    <Link
-                        href="/my-plan"
-                        className="border border-gray-600 text-white px-3 py-1 rounded-full text-sm"
-                    >
-                        Saved {savedCount}
+                    <Link href="/my-plan" className="rounded-full border border-gray-600 px-3 py-1 text-sm">
+                        Saved {saved.length}
                     </Link>
                 </div>
-
             </div>
         </nav>
     );

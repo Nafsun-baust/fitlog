@@ -1,13 +1,7 @@
-
 "use client";
-
 import { createContext, useContext, useState } from "react";
 import toast from "react-hot-toast";
-import type { Workout } from "../types";
-
-interface PlanWorkout extends Workout {
-  isDone: boolean;
-}
+import type { Workout, PlanWorkout } from "../types";
 
 interface PlanContextType {
   plan: PlanWorkout[];
@@ -61,24 +55,17 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
   }
 
   function markAsDone(id: number) {
-    setPlan(
-      plan.map((item) =>
-        item.id === id ? { ...item, isDone: true } : item
-      )
-    );
+    setPlan(plan.map((item) =>
+      item.id === id ? { ...item, isDone: true } : item
+    ));
     toast.success("Workout completed");
   }
 
   return (
     <PlanContext.Provider
       value={{
-        plan,
-        saved,
-        addToPlan,
-        addToSaved,
-        removeFromPlan,
-        removeFromSaved,
-        markAsDone,
+        plan, saved, addToPlan, addToSaved,
+        removeFromPlan, removeFromSaved, markAsDone
       }}
     >
       {children}
@@ -88,10 +75,6 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
 
 export function usePlan() {
   const context = useContext(PlanContext);
-
-  if (!context) {
-    throw new Error("PlanProvider is missing");
-  }
-
+  if (!context) throw new Error("PlanProvider is missing");
   return context;
 }

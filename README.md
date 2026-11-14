@@ -5,6 +5,10 @@ A responsive workout-planning web application that helps users explore exercises
 **Live Demo:** https://fitlog-beryl-zeta.vercel.app/  
 **Repository:** https://github.com/Nafsun-baust/fitlog
 
+## Homepage Screenshot
+
+![FitLog Homepage Screenshot](./fitlog%20home%20ss.jpg)
+
 ## Overview
 
 FitLog provides a workout library backed by an external API and a personal planning area. Users can browse exercises, open individual workout details, save exercises for later, and organize a daily plan.

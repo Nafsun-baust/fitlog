@@ -1,49 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitLog — Workout Planner
 
-## Getting Started
+A responsive workout-planning web application that helps users explore exercises, build a daily workout plan, and keep track of completed activities.
 
-First, run the development server:
+**Live Demo:** https://fitlog-beryl-zeta.vercel.app/  
+**Repository:** https://github.com/Nafsun-baust/fitlog
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+FitLog provides a workout library backed by an external API and a personal planning area. Users can browse exercises, open individual workout details, save exercises for later, and organize a daily plan.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Browse a workout library containing exercises for different muscle groups.
+- Load workout data from an external API.
+- Open individual workout pages to view exercise information and instructions.
+- Add exercises to a daily plan with a maximum of five lifts.
+- Save exercises and switch between the daily plan and saved list.
+- Mark planned exercises as completed or remove them from a list.
+- Sort the plan by duration, estimated calories, or rating.
+- View plan totals for exercises, minutes, and estimated calories.
 
-## Learn More
+## Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** Next.js 16
+- **Library:** React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Icons:** Lucide React
+- **Notifications:** React Hot Toast
+- **State Management:** React Context API
+- **Data:** External FitLog API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Main Dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Runtime dependencies
 
-## Deploy on Vercel
+- `next`
+- `react`
+- `react-dom`
+- `lucide-react`
+- `react-hot-toast`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Development dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `typescript`
+- `tailwindcss`
+- `@tailwindcss/turbopack`
+- `eslint`
+- `eslint-config-next`
+- `@types/node`
+- `@types/react`
+- `@types/react-dom`
 
+See [package.json](./package.json) for the exact package versions.
 
-## FitLog
--Fitlog is a responsive workout planning website
+## Run Locally
 
-## Technologies
--html,tailwind css, typescript , context api, next.js, React hot Toast
+### Prerequisites
 
-## Key feature:
-- plan for workout, get real time plan update, sorting in different item, mark as done if any work is finish,can remove any item
+- Node.js
+- npm
 
-## Live Website:
-https://fitlog-beryl-zeta.vercel.app/
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Nafsun-baust/fitlog.git
+   cd fitlog
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Available Scripts
+
+- `npm run dev` — start the local development server.
+- `npm run build` — create a production build.
+- `npm run start` — start the production server.
+- `npm run lint` — run ESLint.
+
+## Data Source
+
+Workout information is loaded from the FitLog API:
+
+`https://api.abcz.workers.dev/api/fitlog`
+
+The application needs an internet connection to retrieve workout data.
+
+## Project Links
+
+- **Live Demo:** https://fitlog-beryl-zeta.vercel.app/
+- **GitHub Repository:** https://github.com/Nafsun-baust/fitlog
+
+---
+
+Developed by **MD Nafsun Kabir**.

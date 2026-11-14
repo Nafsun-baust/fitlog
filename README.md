@@ -2,7 +2,7 @@
 
 A responsive workout-planning web application that helps users explore exercises, build a daily workout plan, and keep track of completed activities.
 
-**Live Demo:** https://fitlog-beryl-zeta.vercel.app/  
+**Live Demo:** https://fitlog-nafsun.vercel.app/  
 **Repository:** https://github.com/Nafsun-baust/fitlog
 
 ## Homepage Screenshot
@@ -105,7 +105,7 @@ The application needs an internet connection to retrieve workout data.
 
 ## Project Links
 
-- **Live Demo:** https://fitlog-beryl-zeta.vercel.app/
+- **Live Demo:** https://fitlog-nafsun.vercel.app/
 - **GitHub Repository:** https://github.com/Nafsun-baust/fitlog
 
 ---
